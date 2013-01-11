@@ -1,8 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%
 % Dokumentinformationen %
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\titleinfo}{Elektronik 1 - Formelsammlung}
-\newcommand{\authorinfo}{F. Braun, L. Schmid, U. Giger, R. Koller, S.Arnold, S.Ferretti, A.Waldvogel}
+\newcommand{\titleinfo}{Elektronik 1 - Formelsammlung (gem\"ass Unterricht Guido Keel HS12/13)}
+\newcommand{\authorinfo}{A.Waldvogel}
 \newcommand{\versioninfo}{powered by \LaTeX}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -13,7 +13,7 @@
 %
 % DORT NUR ERGÄNZEN, NICHTS LÖSCHEN
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{header}
+\include{header/header}
 
 % Möglichst keine Ergänzungen hier, sondern in header.tex
 \begin{document}
@@ -288,7 +288,7 @@
         \subsection{Diode}
             \underline{\bf Temperaturverhalten}\\
             Thermospannung
-            \hspace{15.3mm}\fbox{$V_T = \frac{k_B\cdot T}{q}$}  $k_B$=Boltzmann-Konstante; $T$=Temperatur in Kelvin; $q$=Elementarladung\\
+            \hspace{15.3mm}\fbox{$V_T = \frac{k_B\cdot T}{q}$} $V_{T_{23^\circ C}} = 25.5 mV$ \fbox{$k_B=1.38065 \cdot 10^{-23}$ J/K; $q=1.6021765 \cdot 10^{-19}$ C; $T$=Temp [K]}\\
             \begin{minipage}[T]{9cm}
                 {\bf Sperrbetrieb}\\
                 $U_{np} > 5.7V$: Temp-Koeff: $+2 mV/K$\\
@@ -335,7 +335,7 @@
                 \hspace{8.4mm}\fbox{$r_d = \frac{V_T}{I_0}$}\\
             \end{minipage}
             \begin{minipage}{5cm}
-                $U_0$= Arbeitspunkt-Spannung\\
+                $V_0$= Arbeitspunkt-Spannung\\
                 $I_0$= Arbeitspunkt-Strom\\
                 $V_T$=Thermospannung
             \end{minipage}
@@ -395,33 +395,33 @@
             \begin{minipage}[T]{6cm}
                 \bf Basisschaltung\\
                 \fbox{$A_N = \frac{I_C}{I_E}$}\\
-                \includegraphics[height=2.5cm]{./bilder/AmpBasisSch.png}
+                \includegraphics[height=2.3cm]{./bilder/AmpBasisSch.png}
             \end{minipage}
             \begin{minipage}[T]{6cm}
                 \bf Emitterschaltung\\
                 \fbox{$B_N = \frac{I_C}{I_B} = \frac{A_N}{1-A_N}$}\\
-                \includegraphics[height=2.5cm]{./bilder/AmpEmitSch.png}                
+                \includegraphics[height=2.3cm]{./bilder/AmpEmitSch.png}                
             \end{minipage}
             \begin{minipage}[T]{6cm}
                 \bf Kollektorschaltung\\
                 \fbox{$C_N = \frac{I_E}{I_B} = \frac{1}{1-A_N}$}\\
-                \includegraphics[height=2.5cm]{./bilder/AmpKolSch.png}                
+                \includegraphics[height=2.3cm]{./bilder/AmpKolSch.png}                
             \end{minipage}
 \hrule
         \subsubsection{Kennlinienfelder}
             \begin{minipage}[T]{14cm}
                 {\bf Ausgangskennlinie (I)}\\
-                typ.: $U_{CE_{sat}}=0.3V$ und Ausgangswiderstand $r_{CE} \cong \frac{U_{Early}}{I_{C0}}$\\
+                typ.: $V_{CE_{sat}}=0.3V$ und Ausgangswiderstand \fbox{$r_{CE} \cong \frac{V_{Early}}{I_{C0}}$}\\
                 \hrule\vspace{1mm}
                 {\bf Strom\"ubertragungskennlinie (II)}\\
                 Kollektorstrom: $I_C = \frac{A_N}{1-A_N}\cdot I_B + \frac{A_N\cdot (1-A_I)}{1-A_N}\cdot I_{SC} = B_N\cdot I_B + I_{CE0} \cong B_N\cdot I_B$\\
                 \hrule\vspace{1mm}
                 {\bf Eingangskennlinie (III)}\\
-                Basisstrom: $I_B = I_{SE}\cdot\left(e^{\frac{V_{BE}}{U_T}}-1\right)$\\
-                Kleinsignalwiderstand: $r_{BE} = \frac{m\cdot V_T}{I_{B0}}$ mit $I_{B0}$: Arbeitspunktstrom\\
+                Basisstrom: $I_B = I_{SE}\cdot\left(e^{\frac{V_{BE}}{V_T}}-1\right)$\\
+                Kleinsignalwiderstand: \fbox{$r_{BE} = \frac{m\cdot V_T}{I_{B0}}$} mit $I_{B0}$: Arbeitspunktstrom\\
                 \hrule\vspace{1mm}
                 {\bf Spannungsr\"uckwirkungskennlinie (IV)}\\
-                $U_{BE} = \eta \cdot U_{CE}$ mit $\eta \cong 0.1 \%$ (kann meist vernachl\"assigt werden!)\\
+                $V_{BE} = \eta \cdot V_{CE}$ mit $\eta \cong 0.1 \%$ (kann meist vernachl\"assigt werden!)\\
             \end{minipage}
             \begin{minipage}[T]{5cm}
                 \includegraphics[width=5cm]{./bilder/BipTraKennlinien.png}
@@ -431,7 +431,7 @@
         \subsubsection{Ersatzschaltung: Transistor als spannungsgesteuerte Stromquelle}
             \begin{minipage}[T]{14cm}
                 Steilheit
-                \hspace{29.3mm}\fbox{$S = \frac{b}{r_{BE}} = \frac{I_{C0}}{m\cdot V_T}$}\\
+                \hspace{29.3mm}\fbox{$S = \frac{b}{r_{BE}} = \frac{I_{C0}}{m\cdot V_T} = g_m = \frac{dI_{OUT}}{dV_{IN}}$}\\
                 Stromverst\"arkung 
                 \hspace{14.7mm}\fbox{$b = h_{FE} = B_N\cdot\left(1+\frac{U_{CE0}}{U_{Early}}\right) \cong B_N$}
             \end{minipage}
@@ -446,7 +446,7 @@
                 Basisstrom
                 \hspace{25.3mm}\fbox{$I_B = \frac{U_e}{r_{BE}}$}\\
                 Verst\"arkung
-                \hspace{23.3mm}\fbox{$V_U = \frac{U_a}{U_e} = -\frac{b}{r_{BE}}\cdot(R_C//r_{CE})$}\\
+                \hspace{23.3mm}\fbox{$V_U = \frac{U_a}{U_e} = -\frac{b}{r_{BE}}\cdot(R_C//r_{CE}) = -S\cdot(R_C//r_{CE})$}\\
             \end{minipage}
             \begin{minipage}[T]{5cm}
                 \includegraphics[width=5cm]{./bilder/KleinSigErsEmmitersch.png}
@@ -519,7 +519,7 @@
          \subsubsection{Differenzverst\"arker}
              \begin{minipage}[T]{15cm}
                  Differenz-Verst\"arkung
-                 \hspace{8.4mm}\fbox{$v_d = \frac{U_{A_d}}{U_{E_d}} = -S\cdot R_C$} ; S = Steilheit\\
+                 \hspace{8.4mm}\fbox{$v_d = \frac{U_{A_d}}{U_{E_d}} = -S \cdot (R_C//r_{CE}) \approx -S\cdot R_C$} ; S = Steilheit\\
                  Gleichtaktverst\"arkung
                  \hspace{8.1mm}\fbox{$v_{gl} = -\frac{R_C}{2\cdot R_E}$}\\
                  Gleichtaktunterdr\"uckung
@@ -644,7 +644,7 @@
                 Ausgangswiderstand
                 \hspace{10.6mm}\fbox{$r_{out} = R//r_{DS}$}\\
                 Verst\"arkung
-                \hspace{23.3mm}\fbox{$A_D = -\frac{S}{2} \cdot R$}\\
+                \hspace{23.3mm}\fbox{$A_D = -S \cdot (R_D//r_{DS}) \approx -S \cdot R_D$}\\
                 Ausgansdifferenzspannung
                 \hspace{1.7mm}\fbox{$V_{out_{diff}} = A \cdot V_{in_{diff}}$}
                 
@@ -682,9 +682,138 @@
             \begin{minipage}[T]{4cm}
                 \includegraphics[width=4cm]{./bilder/Bandgap.png}
             \end{minipage}
+\newpage
+	\section{Spannungsregler}
+        {\bf{Qualit\"atsmasse}}\\
+            \begin{minipage}[t]{6cm}
+                Ausg.-spannung bestimmt durch:\\
+                relativen Stabilisierungsfaktor $S'$\\
+                \vspace{0.5mm}{$S' = \frac{\frac{\Delta U_e}{U_e}}{\frac{\Delta U_a}{U_a}}$}
+            \end{minipage}
+            \begin{minipage}[t]{6cm}
+                Temperaturverhalten:\\
+                Temperaturkoeffizient $TK_U$\\
+                \vspace{0.5mm}{$TK_U = \frac{1}{U_a}\frac{dU_a}{dT}$}
+            \end{minipage}
+            \begin{minipage}[t]{6cm}
+                Lastabh\"angigkeit:\\
+                dynamischer Ausgangswiderstand $r_a$\\
+                \vspace{0.5mm}{$r_a = \frac{dU_a}{dI_a}$}
+            \end{minipage}\\    
+        \subsection{Linearer Regler}
+            \begin{minipage}[T]{14cm}
+                Ausgangsspannung
+                \hspace{13mm}\fbox{$V_{out} = \left(1+\frac{R_1}{R_2}\right) \cdot V_{ref}$}\\
+            \end{minipage}
+            \begin{minipage}{5cm}
+                \includegraphics[height=1.5cm]{./bilder/ReglerLinear.png}
+            \end{minipage}\\
+            
+        \subsection{Einstellbarer Regler}
+        \begin{minipage}[T]{14cm}
+            Ausgangsspannung
+            \hspace{13mm}\fbox{$V_{out} = V_{ref} + R_2 \cdot\left(\frac{V_{ref}}{R_1} + I_{adj}\right)  \approx\left(1+\frac{R_2}{R_1}\right) \cdot V_{ref}$}\\
+        \end{minipage}
+        \begin{minipage}{5cm}
+            \includegraphics[height=2.5cm]{./bilder/ReglerEinstellbar.png}
+        \end{minipage}\\
+        
+        \subsection{Aufw\"artswandler (Step up, Boost)}
+        \begin{minipage}[T]{14cm}
+            Lade-Phase (S geschlossen)
+            \hspace{0.5mm}\fbox{$\Delta I_{L\_on} = \frac{1}{L}V_{in}\cdot t_{on}$}\\  
+            Entlade-Phase (S offen)
+            \hspace{5.8mm}\fbox{$\Delta I_{L\_off} = \frac{1}{L}(V_{in}-V_{out})\cdot t_{off}$}\\  
+            Gleichgewicht
+            \hspace{21mm}\fbox{$\Delta I_{L\_on} =-\Delta I_{L\_off}$}\\  
+            Ausgangsspannung
+            \hspace{13mm}\fbox{$V_{out} = V_{in}\cdot \left(1+\frac{t_{on}}{t_{off}}\right)$}\\
+        \end{minipage}
+        \begin{minipage}{5cm}
+            \includegraphics[width=4cm]{./bilder/ReglerStepUpStromverlauf.png}
+        \end{minipage}\\
+        
+        \subsection{Abw\"artswandler (Step Down, Buck)}
+        \begin{minipage}[T]{14cm}
+            Lade-Phase (S geschlossen)
+            \hspace{0.5mm}\fbox{$\Delta I_{L\_on} = \frac{1}{L}\int_{0}^{T_i}{(V_{in}-V_{out})dt} = \frac{1}{L}(V_{in}-V_{out})\cdot T_i$}\\  
+            Entlade-Phase (S offen)
+            \hspace{5.8mm}\fbox{$\Delta I_{L\_off} = \frac{1}{L}\int_{T_i}^{T_S}{(V_{out}+V_{D_f})dt}= \frac{1}{L}(V_{out}+V_{D_f})(T_S-T_i)$}\\
+            Ausgangsspannung
+            \hspace{13mm}\fbox{$V_{out} = \frac{T_i}{T_S}\cdot V_{in} - \left(1-\frac{T_i}{T_S}\right) \cdot V_{D_f} \approx \frac{T_i}{T_S}\cdot V_{in}$}\\
+        \end{minipage}
+        \begin{minipage}{5cm}
+            \includegraphics[width=5cm]{./bilder/ReglerStepDown.png}
+        \end{minipage}\\
+        
+        \subsection{Invertierender Wandler (Buck-Boost)}
+        \begin{minipage}[T]{8cm}
+            Ausgangsspannung
+            \hspace{13mm}\fbox{$V_{out} = -\frac{T_i}{T_S}\cdot V_{in}$}\\
+        \end{minipage}
+        \begin{minipage}{6cm}
+            $T_i$ = Einschaltzeit\\
+            $T_s$ = Ausschaltzeit
+        \end{minipage}
+        \begin{minipage}{5cm}
+            \includegraphics[width=4cm]{./bilder/ReglerInvert.png}
+        \end{minipage}\\
+        
+        \subsection{Ladepumpen (Charge-Pumps)}
+        \begin{minipage}[T]{14cm}
+            \hspace*{43.3mm}\fbox{$\Delta V_{out} = \frac{\Delta Q_1}{C_1+C_L} = \frac{C_1(V_{in}-V_{out})}{C_1+C_L} = \frac{V_{in}-V_{out}}{1+\frac{C_L}{C_1}}$}\\
+            \hspace*{43.3mm}\fbox{$\Delta Q = C_L \cdot \Delta V_{out} = \frac{C_1 C_L}{C_1+C_L}(V_{in}-V_{out})$}\\
+            \hspace*{43.3mm}\fbox{$I_{out} = \frac{\Delta Q}{T_S} = \frac{C_1 C_L}{C_1+C_L}\frac{V_{in}-V_{out}}{T_S}$}\\
+            \hspace*{43.3mm}Ver\"anderung der Ausgangsspannung durch ver\"andern der\\
+            \hspace*{43.3mm}Schaltfrequenz
+        \end{minipage}
+        \begin{minipage}{5cm}
+            \includegraphics[width=5cm]{./bilder/ReglerChargePump.png}
+        \end{minipage}\\   
+\newpage
 
+    \subsection{Wichtiges zu Spule / Kondensator}
+        Energie im Mag.-Feld
+        \hspace{9mm}\fbox{$W_m = \frac{1}{2} \cdot L \cdot I^2 = \frac{1}{2}\cdot N \cdot I \cdot \Phi$}\\
+        Energie im El.-Feld
+        \hspace{12.5mm}\fbox{$W_E = \underbrace{\frac{1}{2} \cdot C \cdot U^2}_{U = konst}  = \frac{1}{2} \cdot Q \cdot U = \underbrace{\frac{1}{2}\cdot\frac{Q^2}{C}}_{Q = konst}$}\\
+        Spule
+        \hspace{34mm}\fbox{$u_L(t) = L \cdot \frac{di(t)}{dt}$}\\
+        \hspace*{43.5mm}\fbox{$i_L(t) = \frac{1}{L}\int\limits_0^t u(\tau)d\tau + i(0)$}\\
+        Kondensator
+        \hspace{22.7mm}\fbox{$u_C(t) = \frac{1}{C}\int\limits_0^t i(\tau)d\tau + u(0)$}\\
+        \hspace*{43.5mm}\fbox{$i_C(t) = C \cdot \frac{du(t)}{dt}$}\\
+        
+    \section{Oszillatoren}
+        \subsection{Oszillator\"ubersicht}
+            \includegraphics[height=3cm]{./bilder/OszillatorKlassifikation.png}
+            
+        \subsection{Ringoszillator}
+            \begin{minipage}[T]{8cm}
+                Oszillatorfrequenz
+                \hspace{14mm}\fbox{$f_{OSC} = \frac{1}{2\cdot n \cdot t_g}$}
+            \end{minipage}
+            \begin{minipage}[T]{6cm}
+                $t_g$: Time-Delay pro Inverter\\
+                $n$: ungerade Anzahl Inverter\\\\
+                Schaltung ist jedoch nicht vernachl\"assigbar abh\"angig von Technologie, Speisung und Temperatur
+            \end{minipage}
+            \begin{minipage}{4cm}
+                \hspace*{5mm}
+                \includegraphics[width=4cm]{./bilder/Ringoszillator.png}
+            \end{minipage}\\
+            
+        \subsection{LC-Oszillator}
+        \begin{minipage}[T]{15cm}
+            Oszillatorfrequenz
+            \hspace{14mm}\fbox{$\omega_0 = \frac{1}{\sqrt{LC}}$}\\
+        \end{minipage}
+        \begin{minipage}{4cm}
+            \includegraphics[height=2cm]{./bilder/LC_Oszillator.png}
+        \end{minipage}\\
 
-
-
-
+        \subsection{CMOS-Inverter mit Quarz}
+        \includegraphics[height=3cm]{./bilder/QuarzOszillator.png}
+        
 \end{document}
+
