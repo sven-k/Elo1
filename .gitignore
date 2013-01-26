@@ -5,3 +5,8 @@ Elo1.pdf
 *.out
 *.synctex*
 *.sublime-workspace
+/*.bbl
+/*.blg
+/*.tcp
+/*.tps
+/*.toc
